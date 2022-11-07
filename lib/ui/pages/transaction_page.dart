@@ -1,8 +1,36 @@
+import 'package:airplane/models/user_location.dart';
+import 'package:airplane/services/location_service.dart';
 import 'package:airplane/shared/theme.dart';
 import 'package:flutter/material.dart';
 
-class TransactionPage extends StatelessWidget {
+class TransactionPage extends StatefulWidget {
   const TransactionPage({Key? key}) : super(key: key);
+
+  @override
+  State<TransactionPage> createState() => _TransactionPageState();
+}
+
+class _TransactionPageState extends State<TransactionPage> {
+  LocationService locationService = LocationService();
+  double latitude = 0;
+  double longitude = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    locationService.locationStream.listen((userLocation) {
+      setState(() {
+        latitude = userLocation.latitude;
+        longitude = userLocation.longitude;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    locationService.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +46,7 @@ class TransactionPage extends StatelessWidget {
             ),
           ),
           Text(
-            '100.00',
+            '$latitude',
             style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: regular,
@@ -32,7 +60,7 @@ class TransactionPage extends StatelessWidget {
             ),
           ),
           Text(
-            '100.00',
+            '$longitude',
             style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: regular,
