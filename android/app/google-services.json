@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "643583545704",
+    "project_id": "location-17345",
+    "storage_bucket": "location-17345.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643583545704:android:2ae63fd0f5d5f094b886dd",
+        "android_client_info": {
+          "package_name": "com.riofeb.location"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643583545704-vekpg3pkue8skccblvl48n9qjldarvjt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0Xx2EVRj7GtVWXkDoBhmISfrgHvhDEcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643583545704-vekpg3pkue8skccblvl48n9qjldarvjt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
